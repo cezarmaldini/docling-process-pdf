@@ -1,8 +1,7 @@
 import os
 from docling.document_converter import DocumentConverter
 
-PDF_PATH = "ingestion/proposta_02.pdf"
-
+PDF_PATH = "ingestion/teste.pdf"
 
 def convert_pdf_to_document(pdf_path):
     """
@@ -21,5 +20,3 @@ with open("document.md", "w", encoding="utf-8") as arquivo:
     arquivo.write(document)
 
 print("Arquivo Markdown salvo com sucesso!")
-
-
