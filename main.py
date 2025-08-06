@@ -1,6 +1,14 @@
+import os
 from docling.document_converter import DocumentConverter
 
-source = "file:///C:/Users/viva_/workspace/cezarmaldini/docling-process-pdf/files/proposta.pdf"
+os.environ["HF_HOME"] = "C:/meus_modelos/huggingface"
+
+# 📄 Caminho relativo ao arquivo PDF
+source = 'files/proposta_02.pdf'
+
+# 🔄 Converte o documento
 converter = DocumentConverter()
 result = converter.convert(source)
+
+# 📝 Exporta para Markdown
 print(result.document.export_to_markdown())
