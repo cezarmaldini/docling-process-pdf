@@ -1,7 +1,7 @@
 import os
 from docling.document_converter import DocumentConverter
 
-PDF_PATH = "ingestion/2025.07 - RelatorioMensal.pdf"
+PDF_PATH = "ingestion/proposta_02.pdf"
 
 
 def convert_pdf_to_document(pdf_path):
@@ -16,3 +16,10 @@ def convert_pdf_to_document(pdf_path):
 document = convert_pdf_to_document(PDF_PATH)
 
 print(document)
+
+with open("document.md", "w", encoding="utf-8") as arquivo:
+    arquivo.write(document)
+
+print("Arquivo Markdown salvo com sucesso!")
+
+
