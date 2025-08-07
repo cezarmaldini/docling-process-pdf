@@ -2,7 +2,7 @@ import os
 from docling.document_converter import DocumentConverter
 
 # Caminho da pasta onde estão os arquivos PDF
-FILES_DIR = os.path.join("ingestion", "files")
+FILES_DIR = os.path.join("downloads")
 OUTPUT_DIR = os.path.join("ingestion", "files_markdown")
 
 # Cria a pasta de saída, se não existir
