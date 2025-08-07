@@ -1,0 +1,7 @@
+docling
+docling-core
+docling-ibm-models
+docling-parse
+panda
+python-dotenv
+requests
