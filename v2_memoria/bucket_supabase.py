@@ -28,7 +28,7 @@ def upload_markdown_to_bucket(bucket_name: str, file_name: str, markdown_content
 
         today = datetime.today().strftime("%Y%m%d")
 
-        folder = f"propostas_{today}"
+        folder = f"propostas/{today}"
 
         path = f"{folder}/{file}"
 
