@@ -1,9 +1,13 @@
+import os
+from dotenv import load_dotenv
 from supabase import create_client, Client
 
-url: str = "https://rmhwyhdjcciyckrajzmq.supabase.co"
-key: str = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJtaHd5aGRqY2NpeWNrcmFqem1xIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MDcyMzE2NCwiZXhwIjoyMDY2Mjk5MTY0fQ.l7yGzZWSl7ZIVTd0DC3HWAlzplQuTm5pi0MUd5x0v4Y"
+load_dotenv()
 
-supabase: Client = create_client(url, key)
+SUPABASE_URL = os.getenv('SUPABASE_URL')
+SUPABASE_API_KEY = os.getenv('SUPABASE_API_KEY')
+
+supabase: Client = create_client(SUPABASE_URL, SUPABASE_API_KEY)
 
 def upload_markdown_to_bucket(bucket_name: str, file_name: str, markdown_content: str) -> str:
     """
