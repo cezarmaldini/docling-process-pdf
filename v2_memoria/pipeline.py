@@ -4,7 +4,7 @@ from bucket_supabase import upload_markdown_to_bucket
 
 def main():
     site_name = "BDTeste"
-    folder_path = "teste_markdown"   # pasta no SharePoint
+    folder_path = "propostas_maiores"   # pasta no SharePoint
     bucket_name = "teste"
 
     # Busca PDFs no SharePoint
