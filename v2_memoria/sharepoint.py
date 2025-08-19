@@ -1,5 +1,3 @@
-# sharepoint.py
-
 import os
 import requests
 from dotenv import load_dotenv
@@ -65,7 +63,7 @@ def fetch_files_from_sharepoint(site_name, folder_path):
         if file_resp.status_code == 200:
             pdf_files.append({
                 "file_name": file_name,
-                "content": file_resp.content  # PDF em memória (bytes)
+                "content": file_resp.content
             })
         else:
             print(f"Erro ao baixar {file_name}: {file_resp.status_code}")
