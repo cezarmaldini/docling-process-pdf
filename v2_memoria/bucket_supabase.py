@@ -3,6 +3,7 @@ import unicodedata
 import os
 from dotenv import load_dotenv
 from supabase import create_client, Client
+from datetime import datetime
 
 load_dotenv()
 
@@ -23,14 +24,20 @@ def sanitize_filename(filename: str) -> str:
 
 def upload_markdown_to_bucket(bucket_name: str, file_name: str, markdown_content: str) -> str:
     try:
-        safe_name = sanitize_filename(file_name)
+        file = sanitize_filename(file_name)
+
+        today = datetime.today().strftime("%Y%m%d")
+
+        folder = f"propostas_{today}"
+
+        path = f"{folder}/{file}"
 
         supabase.storage.from_(bucket_name).upload(
-            safe_name, 
+            path, 
             markdown_content.encode("utf-8")
         )
         
-        public_url = supabase.storage.from_(bucket_name).get_public_url(safe_name)
+        public_url = supabase.storage.from_(bucket_name).get_public_url(file)
         print(f"✅ Upload concluído: {public_url}")
         return public_url
     except Exception as e:
